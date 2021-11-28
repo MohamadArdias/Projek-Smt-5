@@ -1,3 +1,4 @@
+clear
 % Tanpa Croping
 
 I = imread('oppo.jpg');
