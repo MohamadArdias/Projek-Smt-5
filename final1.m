@@ -1,6 +1,6 @@
 clear
 % menggunakan croping
-Image = imread('E:\semester 5\z-projek\ff\c (10).jpg');
+Image = imread('E:\semester 5\z-projek\gambar tomat\data training\matang (1).jpg');
 imageCroping = imcrop(Image,[1000 1750 800 800]);
 hsvImage = rgb2hsv(imageCroping);
 
