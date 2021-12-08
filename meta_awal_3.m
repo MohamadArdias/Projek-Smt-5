@@ -38,15 +38,15 @@ end
 kelas_latih = cell(jumlah_file, 1);
 
 % mengisi nama2 tomat pada variabel kelas_latih
-for k = 1:15
+for k = 1:14
     kelas_latih{k} = 'Matang';
 end
 
-for k = 16:43
+for k = 15:42
     kelas_latih{k} = 'Mentah';
 end
 
-for k = 44:83
+for k = 43:81
     kelas_latih{k} = 'Setengah Matang';
 end
 
