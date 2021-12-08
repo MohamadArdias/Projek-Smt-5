@@ -2,7 +2,7 @@ clc; clear; close all; warning off all;
 
 % % % Proses Latih
 % lokasi data
-nama_folder = 'E:\semester 5\z-projek\data set buah tomat\data latih';
+nama_folder = 'E:\semester 5\z-projek\data set buah tomat\data uji';
 % membaca file
 nama_file = dir(fullfile(nama_folder, '*.jpg'));
 % jumlah_file
@@ -14,19 +14,19 @@ ciri_latih = zeros(jumlah_file,4);
 for n = 1:jumlah_file
     % membaca file rgb
     Img = imread(fullfile(nama_folder, nama_file(n).name));
-    %figure, imshow(Img)
+%     figure, imshow(Img)
     % rgb to grayscale
     Img_gray = rgb2gray(Img);
-    %figure, imshow(Img_gray)
+%     figure, imshow(Img_gray)
     % grayscale to biner
     bw = imbinarize(Img_gray);
-    %figure, imshow(bw)
+%     figure, imshow(bw)
     % operasi komplemen
     bw = imcomplement(bw);
-    %figure, imshow(bw)
+%     figure, imshow(bw)
     % morfologi filling holes
     bw = imfill(bw,'holes');
-    %figure, imshow(bw)
+%     figure, imshow(bw)
     
     % ekstraksi ciri
     %RGB to HSV
@@ -60,7 +60,8 @@ end
 
 % menyusun variabel kelas_latih
 kelas_latih = cell(jumlah_file, 1);
-% mengisi nama2 tomat pada variabel kelas_latih
+
+% mengisi =ma2 tomat pada variabel kelas_latih
 for k = 1:35
     kelas_latih{k} = 'Matang';
 end
@@ -74,8 +75,15 @@ for k = 81:125
 end
 
 % klasifikasi citra menggunakan algoritma naive bayes
-Mdl = fitcnb(ciri_latih, kelas_latih);
+Mdl = fitcnb(ciri_latih,kelas_latih);
 
 % membaca kelas keluaran hasil pelatihan
 hasil_latih = predict(Mdl,ciri_latih);
+
+jumlah_benar = 0;
+for k =1:jumlah_file
+    if isequal(hasil_latih{k}, kelas_latih{k})
+        jumlah_benar = jumlah_benar+1;
+    end
+end
 

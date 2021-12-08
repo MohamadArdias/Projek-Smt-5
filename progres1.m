@@ -4,10 +4,10 @@ clear
 I = imread('oppo.jpg');
 J = imread('oppo2.jpg');
 K = imread('oppo3.jpg');
-% I2 = imcrop(I,[1000 1600 1000 1000]);
-% 
-% subplot(2,2,1),imshow(I),title('citra asli'); 
-% subplot(2,2,2),imshow(I2),title('citra hasil'); 
+I2 = imcrop(I,[1000 1600 1000 1000]);
+
+subplot(2,2,1),imshow(I),title('citra asli'); 
+subplot(2,2,2),imshow(I2),title('citra hasil'); 
 
 hsvImage = rgb2hsv(I);
 hsvImage2 = rgb2hsv(J);
