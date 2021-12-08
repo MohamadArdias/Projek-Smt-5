@@ -2,7 +2,7 @@ clc; clear; close all; warning off all;
 
 % % % Proses Latih
 % lokasi data
-nama_folder = 'E:\semester 5\z-projek\data set buah tomat\data uji';
+nama_folder = 'E:\semester 5\z-projek\progres\Projek-Smt-5\data latih';
 % membaca file
 nama_file = dir(fullfile(nama_folder, '*.jpg'));
 % jumlah_file
