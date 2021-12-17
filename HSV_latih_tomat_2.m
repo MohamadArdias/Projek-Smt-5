@@ -31,22 +31,18 @@ for n = 1:jumlah_file
     % morfologi filling holes
     bw = imfill(bw,'holes');
 %     figure, imshow(bw)
-    
-    % ekstraksi ciri
-       
-    % ekstrak H S V
-    H = Img(:,:,1);
-    S = Img(:,:,2);
-    V = Img(:,:,3);
-    
-    H(~bw) = 0;
-    S(~bw) = 0;
-    V(~bw) = 0;
-    
-%     figure, imshow(R)
-%     figure, imshow(G)
-%     figure, imshow(B)
 
+    % ekstraksi ciri
+    
+    %RGB to HSV
+    HSV = rgb2hsv(Img);
+%     figure, imshow(HSV)
+          
+    % ekstrak H S V
+    H = HSV(:,:,1);
+    S = HSV(:,:,2);
+    V = HSV(:,:,3);
+    
     %mengubah background menjadi 0
     H(~bw) = 0;
     S(~bw) = 0;

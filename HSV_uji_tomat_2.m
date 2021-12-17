@@ -33,20 +33,16 @@ for n = 1:jumlah_file
 %     figure, imshow(bw)
     
     % ekstraksi ciri
-       
-    % ekstrak H S V
-    H = Img(:,:,1);
-    S = Img(:,:,2);
-    V = Img(:,:,3);
     
-    H(~bw) = 0;
-    S(~bw) = 0;
-    V(~bw) = 0;
-    
-%     figure, imshow(R)
-%     figure, imshow(G)
-%     figure, imshow(B)
+    %RGB to HSV
+    HSV = rgb2hsv(Img);
+%     figure, imshow(HSV)
 
+    % ekstrak H S V
+    H = HSV(:,:,1);
+    S = HSV(:,:,2);
+    V = HSV(:,:,3);
+       
     %mengubah background menjadi 0
     H(~bw) = 0;
     S(~bw) = 0;
@@ -61,16 +57,11 @@ for n = 1:jumlah_file
     Saturation = sum(sum(S))/sum(sum(bw));
     Value = sum(sum(V))/sum(sum(bw));
     
-
-    
-    %menghitung luas objek
-%     Luas = sum(sum(bw));
-       
     %mengisi variable
     ciri_uji(n,1) = Hue;
     ciri_uji(n,2) = Saturation;
     ciri_uji(n,3) = Value;
-%     ciri_latih(n,4) = Luas;
+
 end
 
 % menyusun variabel kelas_latih
