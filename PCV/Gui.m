@@ -134,7 +134,7 @@ set(gca, 'YTick', [])
 
 set(handles.uitable1, 'Data',[])
 
-% --- Executes on button press in pushbutton5.
+% --- Executes on button press in pushbutton3.
 function pushbutton3_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -145,7 +145,6 @@ Img = handles.Img;
 
 % rgb to grayscale
     Img_gray = rgb2gray(Img);
-%     figure, imshow(Img_gray)
     % menampilkan citra biner pada axes
     axes(handles.axes2)
     imshow(Img_gray)
@@ -153,11 +152,10 @@ Img = handles.Img;
     
     % grayscale to biner
     bw = imbinarize(Img_gray);
-%     figure, imshow(bw)
 
     % operasi komplemen
     bw = imcomplement(bw);
-%     figure, imshow(bw)
+
     % menampilkan citra biner pada axes
     axes(handles.axes3)
     imshow(bw)

@@ -8,29 +8,29 @@ clc; clear; close all; warning off all;
 if ~isequal(nama_file,0)
         % membaca file rgb
     Img = imread(fullfile(nama_folder, nama_file));
-%     figure, imshow(Img)
+    figure, imshow(Img)
     
     % rgb to grayscale
     Img_gray = rgb2gray(Img);
-%     figure, imshow(Img_gray)
+    figure, imshow(Img_gray)
     
     % grayscale to biner
     bw = imbinarize(Img_gray);
-%     figure, imshow(bw)
+    figure, imshow(bw)
 
     % operasi komplemen
     bw = imcomplement(bw);
-%     figure, imshow(bw)
+    figure, imshow(bw)
     
     % morfologi filling holes
     bw = imfill(bw,'holes');
-%     figure, imshow(bw)
+    figure, imshow(bw)
     
     % ekstraksi ciri
     
     %RGB to HSV
     HSV = rgb2hsv(Img);
-%     figure, imshow(HSV)
+    figure, imshow(HSV)
 
     % ekstrak H S V
     H = HSV(:,:,1);
