@@ -52,12 +52,7 @@ for n = 1:jumlah_file
     Hue = sum(sum(H))/sum(sum(bw));
     Saturation = sum(sum(S))/sum(sum(bw));
     Value = sum(sum(V))/sum(sum(bw));
-    
-
-    
-    %menghitung luas objek
-%     Luas = sum(sum(bw));
-       
+           
     %mengisi variable
     ciri_latih(n,1) = Hue;
     ciri_latih(n,2) = Saturation;

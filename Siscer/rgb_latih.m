@@ -34,17 +34,19 @@ for n = 1:jumlah_file
 
     % ekstraksi ciri
     
-         
-    % ekstrak H S V
+    % ekstrak R G B
     R = Img(:,:,1);
     G = Img(:,:,2);
     B = Img(:,:,3);
-    
+%     figure, imshow(R)
+%     figure, imshow(G)
+%     figure, imshow(B)
+
     %mengubah background menjadi 0
     R(~bw) = 0;
     G(~bw) = 0;
     B(~bw) = 0;
-    
+        
     %menghitung rata2 h,s,v
     Red = sum(sum(R))/sum(sum(bw));
     Green = sum(sum(G))/sum(sum(bw));
