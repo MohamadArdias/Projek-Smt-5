@@ -11,6 +11,7 @@ jumlah_file = numel(nama_file);
 % inilisiasi
 ciri_latih = zeros(jumlah_file,3);
 % mengolah citra
+
 for n = 1:jumlah_file
     % membaca file rgb
     Img = imread(fullfile(nama_folder, nama_file(n).name));
