@@ -143,7 +143,7 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % memanggil variable Img yang ada di lokasi handles
 Img = handles.Img;
 
-% rgb to grayscale
+    % rgb to grayscale
     Img_gray = rgb2gray(Img);
     % menampilkan citra biner pada axes
     axes(handles.axes2)

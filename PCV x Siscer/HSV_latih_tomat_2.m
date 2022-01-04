@@ -49,6 +49,10 @@ for n = 1:jumlah_file
     S(~bw) = 0;
     V(~bw) = 0;
     
+%     figure, imshow(H)
+%     figure, imshow(S)
+%     figure, imshow(V)
+    
     %menghitung rata2 h,s,v
     Hue = sum(sum(H))/sum(sum(bw));
     Saturation = sum(sum(S))/sum(sum(bw));
